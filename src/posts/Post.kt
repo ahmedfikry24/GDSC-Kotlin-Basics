@@ -1,21 +1,23 @@
 package posts
 
-class Post(
-    age: Int,
-    shares: List<String>
+open class Post(
+    open var publisherName: String
 ) {
-    var name: String = "ahmed"
+
+    var isEdited = false
     var likesCount: Int = 0
-
-
     var comments = mutableListOf("hi", "hi")
 
     fun addLike() = likesCount++
     fun removeLike() = likesCount--
-    fun addComment() = comments.add("hi")
-    fun setName(name: String) {
-        this.name = name
-        println(name)
+
+    fun addComment(comment: String) = comments.add(comment)
+
+    fun getName() {
+        println(publisherName)
     }
 
+    open fun editPost() {
+        isEdited = true
+    }
 }

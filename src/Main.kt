@@ -1,10 +1,8 @@
+import posts.ImagePost
 import posts.Post
+import posts.VideoPost
 
 fun main() {
-
-    val friendPost = Post(
-        age = 0,
-        shares = listOf()
-    )
-    friendPost.setName("ahmed")
+    val myPost = Post("mohamed").toString()
+    val friendPost = VideoPost("mohamed").editPost()
 }
