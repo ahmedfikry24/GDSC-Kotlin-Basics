@@ -1,10 +1,10 @@
 package posts
 
-open class Post(
-    open var publisherName: String
-) {
+abstract class BasePost {
 
-    var isEdited = false
+    abstract var text: String
+
+
     var likesCount: Int = 0
     var comments = mutableListOf("hi", "hi")
 
@@ -13,11 +13,6 @@ open class Post(
 
     fun addComment(comment: String) = comments.add(comment)
 
-    fun getName() {
-        println(publisherName)
-    }
+    abstract fun editPost(text: String, image: String)
 
-    open fun editPost() {
-        isEdited = true
-    }
 }

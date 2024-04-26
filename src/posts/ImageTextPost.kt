@@ -1,8 +1,12 @@
 package posts
 
-class VideoPost : BasePost(), Post {
+class ImageTextPost(publisherName: String) : BasePost() {
 
-    val videoLink = "www.google.com"
+    var imageUrl = "www.google.com"
+
+
+    fun addImageUrl() {
+    }
 
     fun editPost() {
 
@@ -13,11 +17,6 @@ class VideoPost : BasePost(), Post {
         set(value) {}
 
     override fun editPost(text: String, image: String) {
-
+        imageUrl = image
     }
-
-    override fun getPublisherName() {
-
-    }
-
 }

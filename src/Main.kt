@@ -1,8 +1,8 @@
-import posts.ImagePost
-import posts.Post
-import posts.VideoPost
+import posts.*
 
 fun main() {
-    val myPost = Post("mohamed").toString()
-    val friendPost = VideoPost("mohamed").editPost()
+
+    var myTextPost = VideoPost()
+    myTextPost.likesCount
+
 }
