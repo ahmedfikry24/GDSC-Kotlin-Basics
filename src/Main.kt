@@ -1,13 +1,10 @@
-import design_patterns.BasicOrder
-import design_patterns.CoffeeDecorator
-import design_patterns.RestaurantAndCafe
-import design_patterns.RiceDecorator
+import design_patterns.Paragraph
 
 fun main() {
-    val restaurant = RestaurantAndCafe()
-    val basicOrder = BasicOrder()
-    val riceOrder = RiceDecorator(basicOrder)
-    val coffeeAndRiceOrder = CoffeeDecorator(riceOrder)
+    val paragraph = Paragraph.Builder().setPartA("This is part A. ")
+        .setPartB("This is part B. ")
+        .setPartC("This is part C.")
+        .build()
 
-    restaurant.requestOrder(coffeeAndRiceOrder)
+    println("Paragraph: ${paragraph.partA}${paragraph.partB}${paragraph.partC}")
 }
