@@ -1,13 +1,13 @@
-import design_patterns.NewsAgency
-import design_patterns.NewsSubscribers
+import design_patterns.BasicOrder
+import design_patterns.CoffeeDecorator
+import design_patterns.RestaurantAndCafe
+import design_patterns.RiceDecorator
 
 fun main() {
-    val newsAgency = NewsAgency()
-    val subscriber1 = NewsSubscribers()
-    val subscriber2 = NewsSubscribers()
+    val restaurant = RestaurantAndCafe()
+    val basicOrder = BasicOrder()
+    val riceOrder = RiceDecorator(basicOrder)
+    val coffeeAndRiceOrder = CoffeeDecorator(riceOrder)
 
-    newsAgency.addObserver(subscriber1)
-    newsAgency.addObserver(subscriber2)
-
-    newsAgency.notifyObservers("New Kotlin version released!")
+    restaurant.requestOrder(coffeeAndRiceOrder)
 }
